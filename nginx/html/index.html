@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sistem Izleme</title>
+    <style>
+        html{text-align: center;}
+        body { font-family: monospace; background: #0f0f0f; color: #00ff00; display: }
+        .metric { font-size: 24px; margin: 20px;  }
+    </style>
+</head>
+<body>
+    <h1>Canli Sistem Izleme</h1>
+    <div class="metric">CPU: <span id="cpu">-</span>%</div>
+    <div class="metric">RAM: <span id="ram">-</span>%</div>
+    <div class="metric">Disk: <span id="disk">-</span>%</div>
+    <div class="metric">Network Sent: <span id="net_sent">-</span> bytes</div>
+    <div class="metric">Network Recv: <span id="net_recv">-</span> bytes</div>
+    <script>
+        async function update() {
+            try {
+                const res = await fetch('/api/sysinfo');
+                const data = await res.json();
+                document.getElementById('cpu').textContent = data.cpu;
+                document.getElementById('ram').textContent = data.ram;
+                document.getElementById('disk').textContent = data.disk;
+                document.getElementById('net_sent').textContent = data.net_sent;
+                document.getElementById('net_recv').textContent = data.net_recv;
+            } catch (e) {
+                console.error("Veri alinamadi:", e);
+            }
+        }
+        setInterval(update, 2000);
+        update();
+    </script>
+</body>
+</html>

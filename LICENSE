@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 MIT License
 
 Copyright (c) 2025 ATimuçin
@@ -19,3 +20,9 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+=======
+
+### 4. **`LICENSE` ekle (MIT)**
+```bash
+curl -s https://api.github.com/licenses/mit | jq -r '.body' > ~/nginx-system-dashboard/LICENSE
+>>>>>>> 4838ffd (feat: Nginx + psutil dashboard)
