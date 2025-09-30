@@ -33,6 +33,6 @@ class SysApiHandler(BaseHTTPRequestHandler):
             self.end_headers()
 
 if __name__ == "__main__":
-    server = HTTPServer(('0.0.0.0', 8080), SysApiHandler)s
+    server = HTTPServer(('0.0.0.0', 8080), SysApiHandler)
     print("API running: http://localhost:8080/sysinfo")
     server.serve_forever()
