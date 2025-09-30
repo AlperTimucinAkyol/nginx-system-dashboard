@@ -3,6 +3,9 @@ import json
 import psutil
 from http.server import HTTPServer, BaseHTTPRequestHandler
 
+def bytes_to_MB(bytes_value):
+    return bytes_value / (1024 * 1024)
+
 class SysApiHandler(BaseHTTPRequestHandler):
     def do_GET(self):
         if self.path == '/sysinfo':
@@ -15,9 +18,8 @@ class SysApiHandler(BaseHTTPRequestHandler):
                     "cpu": cpu,
                     "ram": ram,
                     "disk": disk,
-                    "net_sent": net.bytes_recv,
-                    "net_sent": net.bytes_sent,
-                    "net_recv": net.bytes_recv
+                    "net_sent": bytes_to_MB(net.bytes_sent),
+                    "net_recv": bytes_to_MB(net.bytes_recv)
                 }
                 self.send_response(200)
                 self.send_header('Content-type', 'application/json')

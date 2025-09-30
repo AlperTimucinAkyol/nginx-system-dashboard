@@ -4,7 +4,7 @@
     <title>Sistem Izleme</title>
     <style>
         html{text-align: center;}
-        body { font-family: monospace; background: #0f0f0f; color: #00ff00; display: }
+        body { font-family: monospace; background: #0f0f0f; color: #00ff00;}
         .metric { font-size: 24px; margin: 20px;  }
     </style>
 </head>
@@ -13,8 +13,8 @@
     <div class="metric">CPU: <span id="cpu">-</span>%</div>
     <div class="metric">RAM: <span id="ram">-</span>%</div>
     <div class="metric">Disk: <span id="disk">-</span>%</div>
-    <div class="metric">Network Sent: <span id="net_sent">-</span> bytes</div>
-    <div class="metric">Network Recv: <span id="net_recv">-</span> bytes</div>
+    <div class="metric">Network Sent: <span id="net_sent">-</span> MB</div>
+    <div class="metric">Network Recv: <span id="net_recv">-</span> MB</div>
     <script>
         async function update() {
             try {
