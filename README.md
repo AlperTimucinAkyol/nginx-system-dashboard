@@ -24,3 +24,6 @@ nginx -c nginx/conf/nginx.conf
 Kullanım
 Dashboard: http://localhost:8081
 API: http://localhost:8081/api/sysinfo
+```
+## Görünüm
+<img width="724" height="329" alt="image" src="https://github.com/user-attachments/assets/0361c140-121d-425e-a303-cdc721f6901d" />
